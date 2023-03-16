@@ -1,14 +1,13 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import "./index.scss"
 
 type ILinkItem = {
   to: string;
-  children: React.ReactNode;
 }
 
-const LinkItem: FC<ILinkItem> = ({ children, to }) => {
+const LinkItem: FC<PropsWithChildren<ILinkItem>> = ({ children, to }) => {
   return (
     <LinkContainer>
       <NavLink to={to} className={({ isActive }) => isActive ? 'link__item active__link' : "link__item"}>

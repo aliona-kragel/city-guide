@@ -1,8 +1,8 @@
 import LinkItem from "../base/LinkItem";
 import { FlexContainer } from "../styled/FlexContainer";
-// import MapLogo from "../../icons/map.svg"
+// import MapLogo from "icons/map.svg"
 // import CityLogo from 'icons/city.svg';
-// import LogoutLogo from '../../icons/logout.svg';
+// import LogoutLogo from 'icons/logout.svg';
 import "./index.scss";
 
 const NavMenu = () => {
@@ -14,7 +14,7 @@ const NavMenu = () => {
           <span>Map</span>
         </LinkItem>
         <LinkItem to="cities">
-          {/* <CityLogo className="" /> */}
+          {/* <CityLogo /> */}
           <span>Cities</span>
         </LinkItem>
       </div>

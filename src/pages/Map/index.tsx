@@ -1,4 +1,4 @@
-// import SearchControl from "../../components/SearchControl";
+import AutocompleteTextfield from "components/AutocompleteTextfield";
 import MapBlock from "../../components/MapBlock";
 import { FlexContainer } from "../../components/styled/FlexContainer";
 import "./index.scss"
@@ -6,7 +6,7 @@ import "./index.scss"
 const Map = () => {
   return (
     <FlexContainer className="map__container" direction="column">
-      {/* <SearchControl /> */}
+      <AutocompleteTextfield />
       <MapBlock />
     </FlexContainer>
   )
