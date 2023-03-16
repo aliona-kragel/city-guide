@@ -3,6 +3,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import { useEffect, useState } from 'react';
 import { getLocations } from 'services';
 import { Locations } from 'types';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import "./index.scss"
 
 const AutocompleteTextfield = () => {
@@ -50,7 +51,9 @@ const AutocompleteTextfield = () => {
         <TextField {...params} label="Search cities" fullWidth />
       )}
       renderOption={(props, option: Locations | null) => (
-        <li {...props} key={option?.raw.place_id} >{option?.raw.display_name}</li>
+        <li {...props} key={option?.raw.place_id} >
+          <LocationOnIcon sx={{ color: 'text.secondary' }} />
+          {option?.raw.display_name}</li>
       )}
     />
   )
