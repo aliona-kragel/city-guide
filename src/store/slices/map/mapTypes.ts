@@ -21,3 +21,7 @@ export interface Location {
     icon?: string;
   }
 }
+
+export interface IMap {
+  selectedLocation: Location | null;
+}

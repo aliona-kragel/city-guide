@@ -1,14 +1,12 @@
+import { useTypedSelector } from "hooks/useTypedSelector";
 import { LatLngTuple } from "leaflet";
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { Location } from "types";
 import "./index.scss";
 
-interface MapBlockProps {
-  selectedLocation: Location | null
-}
+const MapBlock = () => {
+  const { selectedLocation } = useTypedSelector(state => state.map);
 
-const MapBlock: FC<MapBlockProps> = ({ selectedLocation }) => {
   const [marker, setMarker] = useState<LatLngTuple | []>([53.904541, 27.561523])
   const [position, setPosition] = useState<LatLngTuple | []>([53.904541, 27.561523])
   console.log(position);
