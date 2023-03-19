@@ -1,4 +1,4 @@
-import { LatLngTuple } from "leaflet";
+import { LatLngExpression } from "leaflet";
 
 export interface Location {
   x: number;
@@ -26,5 +26,5 @@ export interface Location {
 
 export interface IMap {
   selectedLocation: Location | null;
-  markerPosition: LatLngTuple | []
+  markerPosition: LatLngExpression | undefined
 }

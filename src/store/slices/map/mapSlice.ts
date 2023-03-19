@@ -12,7 +12,8 @@ const mapSlice = createSlice({
   initialState,
   reducers: {
     setLocation: (state, action: PayloadAction<Location>) => {
-      state.selectedLocation = action.payload
+      state.selectedLocation = action.payload;
+      state.markerPosition = [action.payload.y, action.payload.x];
     },
     setMarker: (state, action: PayloadAction<LatLngTuple>) => {
       state.markerPosition = action.payload
