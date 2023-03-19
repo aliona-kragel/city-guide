@@ -1,4 +1,4 @@
-export interface Locations {
+export interface Location {
   x: number;
   y: number;
   label: string;

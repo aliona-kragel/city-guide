@@ -1,18 +1,25 @@
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import { useEffect, useState } from 'react';
-import { getLocations } from 'services';
-import { Locations } from 'types';
+import { FC, useEffect, useState } from 'react';
+import { getLocations } from 'services/getLocations';
+import { Location } from 'types';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import "./index.scss"
 
-const AutocompleteTextfield = () => {
-  const [value, setValue] = useState<Locations | null>();
-  const [inputValue, setInputValue] = useState<string>("");
-  const [options, setOptions] = useState<Locations[]>([]);
+interface AutocompleteProps {
+  value: Location | null,
+  setValue: any
+}
 
-  const handleChange = (event: React.SyntheticEvent<Element, Event>, newValue: Locations | null): void => {
-    setValue(newValue);
+const AutocompleteTextfield: FC<AutocompleteProps> = ({ value, setValue }) => {
+
+  const [inputValue, setInputValue] = useState<string>("");
+  const [options, setOptions] = useState<Location[]>([]);
+
+  const handleChange = (event: React.SyntheticEvent<Element, Event>, newValue: Location | null): void => {
+    if (newValue) {
+      setValue(newValue);
+    }
   }
   const handleInputChange = (event: React.SyntheticEvent<EventTarget>, newInputValue: string): void => {
     setInputValue(newInputValue);
@@ -29,7 +36,7 @@ const AutocompleteTextfield = () => {
     }, [inputValue])
 
   return (
-    <Autocomplete<Locations | null >
+    <Autocomplete<Location>
       className='search__container'
       id="autocomplete"
       value={value || null}
@@ -50,7 +57,7 @@ const AutocompleteTextfield = () => {
       renderInput={(params) => (
         <TextField {...params} label="Search cities" fullWidth />
       )}
-      renderOption={(props, option: Locations | null) => (
+      renderOption={(props, option: Location) => (
         <li {...props} key={option?.raw.place_id} >
           <LocationOnIcon sx={{ color: 'text.secondary' }} />
           {option?.raw.display_name}</li>
