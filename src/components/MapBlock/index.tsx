@@ -1,3 +1,4 @@
+import WeatherInfo from "components/WeatherInfo";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "./index.scss";
@@ -15,6 +16,7 @@ const MapBlock = () => {
         <Marker position={markerPosition}>
           <Popup>
             {selectedLocation?.label}
+            <WeatherInfo />
           </Popup>
         </Marker>)}
     </MapContainer >
