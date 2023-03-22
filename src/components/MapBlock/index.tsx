@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "./index.scss";
 
 const MapBlock = () => {
-  const { selectedLocation, markerPosition } = useTypedSelector(state => state.map);
+  const { markerPosition } = useTypedSelector(state => state.map);
 
   return (
     <MapContainer center={markerPosition} zoom={2} scrollWheelZoom={false} className="map-block__container">
@@ -14,8 +14,7 @@ const MapBlock = () => {
       />
       {!!markerPosition && (
         <Marker position={markerPosition}>
-          <Popup>
-            {selectedLocation?.label}
+          <Popup className="popup">
             <WeatherInfo />
           </Popup>
         </Marker>)}
