@@ -1,18 +1,24 @@
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { useEffect, useState } from 'react';
-import { getLocations } from 'services';
-import { Locations } from 'types';
+import { getLocations } from 'services/getLocations';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import "./index.scss"
+import { useTypedSelector } from 'hooks/useTypedSelector';
+import useMapActions from 'hooks/useMapActions';
+import { Location } from 'store/slices/map/mapTypes';
 
 const AutocompleteTextfield = () => {
-  const [value, setValue] = useState<Locations | null>();
-  const [inputValue, setInputValue] = useState<string>("");
-  const [options, setOptions] = useState<Locations[]>([]);
+  const { selectedLocation } = useTypedSelector(state => state.map);
+  const { setLocation } = useMapActions();
 
-  const handleChange = (event: React.SyntheticEvent<Element, Event>, newValue: Locations | null): void => {
-    setValue(newValue);
+  const [inputValue, setInputValue] = useState<string>("");
+  const [options, setOptions] = useState<Location[]>([]);
+
+  const handleChange = (event: React.SyntheticEvent<Element, Event>, newValue: Location | null): void => {
+    if (newValue) {
+      setLocation(newValue);
+    }
   }
   const handleInputChange = (event: React.SyntheticEvent<EventTarget>, newInputValue: string): void => {
     setInputValue(newInputValue);
@@ -29,10 +35,10 @@ const AutocompleteTextfield = () => {
     }, [inputValue])
 
   return (
-    <Autocomplete<Locations | null >
+    <Autocomplete<Location>
       className='search__container'
       id="autocomplete"
-      value={value || null}
+      value={selectedLocation || null}
       options={options}
       onChange={handleChange}
       onInputChange={handleInputChange}
@@ -50,7 +56,7 @@ const AutocompleteTextfield = () => {
       renderInput={(params) => (
         <TextField {...params} label="Search cities" fullWidth />
       )}
-      renderOption={(props, option: Locations | null) => (
+      renderOption={(props, option: Location) => (
         <li {...props} key={option?.raw.place_id} >
           <LocationOnIcon sx={{ color: 'text.secondary' }} />
           {option?.raw.display_name}</li>

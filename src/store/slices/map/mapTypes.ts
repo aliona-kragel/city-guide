@@ -1,4 +1,6 @@
-export interface Locations {
+import { LatLngExpression } from "leaflet";
+
+export interface Location {
   x: number;
   y: number;
   label: string;
@@ -20,4 +22,9 @@ export interface Locations {
     importance: number;
     icon?: string;
   }
+}
+
+export interface IMap {
+  selectedLocation: Location | null;
+  markerPosition: LatLngExpression | undefined
 }
