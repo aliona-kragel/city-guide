@@ -1,12 +1,16 @@
-import { FC, PropsWithChildren } from "react";
+import { FC, MouseEventHandler, PropsWithChildren } from "react";
 import "./index.scss"
 
-const ButttonSearch: FC<PropsWithChildren> = ({ children }) => {
+interface BtnSearchTypes {
+  onClick?: MouseEventHandler<HTMLButtonElement>
+}
+
+const ButtonSearch: FC<PropsWithChildren<BtnSearchTypes>> = ({ children, onClick }) => {
   return (
-    <button className="button">
+    <button className="button" onClick={onClick}>
       {children}
     </button>
   )
 }
 
-export default ButttonSearch;
+export default ButtonSearch;

@@ -6,16 +6,16 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import "./index.scss"
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import useMapActions from 'hooks/useMapActions';
-import { Location } from 'store/slices/map/mapTypes';
+import { LocationTypes } from 'types/locationTypes';
 
 const AutocompleteTextfield = () => {
   const { selectedLocation } = useTypedSelector(state => state.map);
   const { setLocation } = useMapActions();
 
   const [inputValue, setInputValue] = useState<string>("");
-  const [options, setOptions] = useState<Location[]>([]);
+  const [options, setOptions] = useState<LocationTypes[]>([]);
 
-  const handleChange = (event: React.SyntheticEvent<Element, Event>, newValue: Location | null): void => {
+  const handleChange = (event: React.SyntheticEvent<Element, Event>, newValue: LocationTypes | null): void => {
     if (newValue) {
       setLocation(newValue);
     }
@@ -35,18 +35,18 @@ const AutocompleteTextfield = () => {
     }, [inputValue])
 
   return (
-    <Autocomplete<Location>
-      className='search__container'
+    <Autocomplete<LocationTypes>
+      className='autocomplete__container'
       id="autocomplete"
       value={selectedLocation || null}
       options={options}
       onChange={handleChange}
       onInputChange={handleInputChange}
-      sx={{
-        '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-          border: '2px solid gray',
-        },
-      }}
+      // sx={{
+      //   '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+      //     border: '2px solid gray',
+      //   },
+      // }}
       filterOptions={(x) => x}
       autoComplete
       includeInputInList
@@ -56,7 +56,7 @@ const AutocompleteTextfield = () => {
       renderInput={(params) => (
         <TextField {...params} label="Search cities" fullWidth />
       )}
-      renderOption={(props, option: Location) => (
+      renderOption={(props, option: LocationTypes) => (
         <li {...props} key={option?.raw.place_id} >
           <LocationOnIcon sx={{ color: 'text.secondary' }} />
           {option?.raw.display_name}</li>

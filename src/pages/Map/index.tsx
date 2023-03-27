@@ -5,7 +5,7 @@ import "./index.scss";
 
 const Map = () => {
   return (
-    <FlexContainer className="map__container" direction="column">
+    <FlexContainer className="map__container" direction="column" justify="start">
       <AutocompleteTextfield />
       <MapBlock />
     </FlexContainer>

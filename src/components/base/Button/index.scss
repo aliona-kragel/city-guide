@@ -3,7 +3,7 @@
 .button{
   border: none;
   background: $extra_color;
-  height: 2.5rem;
+  height: 3.5rem;
   width: fit-content;
   border-radius: 4px;
   line-height: 16px;
@@ -12,5 +12,11 @@
   font: {
     size: 12px;
     weight: 600;
+  }
+  &:hover{
+    background: $btn_hover;
+  }
+  &:active{
+    background: $btn_active;
   }
 }

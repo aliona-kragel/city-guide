@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { LatLngTuple } from "leaflet";
-import { IMap, Location } from "./mapTypes";
+import { LocationTypes } from "types/locationTypes";
+import { IMap } from "./mapTypes";
 
 const initialState: IMap = {
   selectedLocation: null,
@@ -11,7 +12,7 @@ const mapSlice = createSlice({
   name: "map",
   initialState,
   reducers: {
-    setLocation: (state, action: PayloadAction<Location>) => {
+    setLocation: (state, action: PayloadAction<LocationTypes>) => {
       state.selectedLocation = action.payload;
       state.markerPosition = [action.payload.y, action.payload.x];
     },
