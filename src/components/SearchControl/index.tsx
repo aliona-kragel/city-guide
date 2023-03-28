@@ -1,22 +1,17 @@
 import { Search } from '@mui/icons-material';
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
-import ButttonSearch from 'components/base/Button';
+import ButtonWrapper from 'components/base/ButtonWrapper';
 import { FlexContainer } from 'components/styled/FlexContainer';
 import useCitiesActions from 'hooks/useCitiesActions';
-import { useTypedSelector } from 'hooks/useTypedSelector';
 import { useState } from 'react';
 import { getLocations } from 'services/getLocations';
 import "./index.scss";
 
 
 const SearchControl = () => {
-  const { locationsList } = useTypedSelector(state => state.cities);
   const { setLocationsList } = useCitiesActions();
   const [inputValue, setValue] = useState<string>('');
-
-  console.log("locationsList", locationsList);
-
   const handleClick = () => {
     getLocations(inputValue)
       .then((res: any) => setLocationsList(res));
@@ -36,7 +31,7 @@ const SearchControl = () => {
           </InputAdornment>
         }}
       />
-      <ButttonSearch onClick={handleClick}>Search</ButttonSearch>
+      <ButtonWrapper onClick={handleClick}>Search</ButtonWrapper>
     </FlexContainer>
   );
 }

@@ -1,0 +1,13 @@
+@import "../../styles/variables.scss";
+
+.city__sticker{
+  width: fit-content;
+  position: absolute;
+  right: 0;
+  top: 15px;
+  background-color: $sticker_bgc;
+  color: white;
+  text-transform: capitalize;
+  padding: 0 8px;
+  font-size: 12px;
+}
