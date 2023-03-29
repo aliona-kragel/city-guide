@@ -2,6 +2,7 @@
 
 div .nav__container{
   width: 240px;
+  min-width: 240px;
   height: calc(100vh - 40px);
   background: $main_color;
   padding-left: 30px;

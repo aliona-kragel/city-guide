@@ -9,7 +9,7 @@ export const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<MainLayout />}>
       <Route path="map" element={<Map />} />
       <Route path="cities" element={<Cities />} />
-      <Route path="/cities/:id" element={<PlaceDetails />} />
+      <Route path="/cities/:osm_id" element={<PlaceDetails />} />
     </Route >
   </>
 ))

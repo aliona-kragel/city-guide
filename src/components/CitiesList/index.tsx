@@ -1,16 +1,16 @@
 import { FlexContainer } from "components/styled/FlexContainer"
 import { useTypedSelector } from "hooks/useTypedSelector";
-import "./index.scss";
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import DetailsButton from "components/base/DetailsButton";
 import CitySticker from "components/CitySticker";
 import { useNavigate } from "react-router-dom";
+import "./index.scss";
 
 const CitiesList = () => {
   const { locationsList } = useTypedSelector(state => state.cities);
   const navigate = useNavigate();
   return (
-    <FlexContainer direction="column" align="center" gap="10px" >
+    <FlexContainer className="locations__list" direction="column" align="center" gap="10px" >
       {
         !!locationsList?.length && locationsList.map((item) =>
           <div className="location__item" key={item.raw.osm_id}>
