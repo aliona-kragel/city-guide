@@ -21,7 +21,7 @@ const WeatherInfo = () => {
 
   return (
     <>
-      <LinkItem to="/cities">{selectedLocation?.label}</LinkItem>
+      <LinkItem to={`/cities/${selectedLocation?.raw.osm_id}`}>{selectedLocation?.label}</LinkItem>
       <FlexContainer padding="0px 10px 0px 0px" gap="5px" className="weather__block">
         <img src={icon} alt="img" className="weather__icon" />
         <div className="weather__desc">

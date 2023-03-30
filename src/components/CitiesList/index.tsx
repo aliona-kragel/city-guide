@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import "./index.scss";
 
 const CitiesList = () => {
-  const { locationsList } = useTypedSelector(state => state.cities);
+  const { locationsList, inputValue } = useTypedSelector(state => state.cities);
   const navigate = useNavigate();
   return (
     <FlexContainer className="locations__list" direction="column" align="center" gap="10px" >
@@ -21,6 +21,9 @@ const CitiesList = () => {
             </FlexContainer>
             <DetailsButton onClick={() => navigate(`/cities/${item.raw.osm_id}`)}>view more</DetailsButton>
           </div>)
+      }
+      {
+        ((inputValue == "") && <div>Enter smth</div>) || (!!(locationsList?.length == 0) && <div>No matching resulst</div>)
       }
     </FlexContainer>
   )

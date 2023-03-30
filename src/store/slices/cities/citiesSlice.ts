@@ -5,7 +5,8 @@ import { ICities, IAttractionsListTypes, IAttractionDetailsTypes } from "./citie
 const initialState: ICities = {
   locationsList: [],
   attractionsList: [],
-  attractionDetails: null
+  attractionDetails: null,
+  inputValue: "",
 }
 
 const citiesSlice = createSlice({
@@ -24,6 +25,9 @@ const citiesSlice = createSlice({
     clearCitieState: (state) => {
       state.attractionsList = [];
       state.attractionDetails = null
+    },
+    setInputValue: (state, action: PayloadAction<string>) => {
+      state.inputValue = action.payload;
     }
   }
 })

@@ -31,7 +31,10 @@ const AutocompleteTextfield = () => {
         return;
       }
       getLocations(inputValue)
-        .then((res: any) => setOptions(res?.length ? res : []))
+        .then((res: any) => {
+          let options: LocationTypes[] = res;
+          setOptions(options?.length ? options.filter((options) => options?.raw.osm_type === "relation") : [])
+        })
     }, [inputValue])
 
   return (

@@ -4,34 +4,42 @@ import TextField from '@mui/material/TextField';
 import ButtonWrapper from 'components/base/ButtonWrapper';
 import { FlexContainer } from 'components/styled/FlexContainer';
 import useCitiesActions from 'hooks/useCitiesActions';
-import { useState } from 'react';
+import { useTypedSelector } from 'hooks/useTypedSelector';
+import { KeyboardEvent, useState } from 'react';
 import { getLocations } from 'services/getLocations';
 import "./index.scss";
 
 
 const SearchControl = () => {
-  const { setLocationsList } = useCitiesActions();
-  const [inputValue, setValue] = useState<string>('');
-  const handleClick = () => {
+  const { setLocationsList, setInputValue } = useCitiesActions();
+  const { inputValue } = useTypedSelector(state => state.cities);
+
+  const getLocationsList = () => {
     getLocations(inputValue)
       .then((res: any) => setLocationsList(res));
+  }
+  const handleEnterDown = (e: KeyboardEvent<HTMLImageElement>) => {
+    if (e.key === "Enter") {
+      getLocationsList()
+    }
   }
 
   return (
     <FlexContainer className='search-control__container' gap='10px'>
       <TextField
-        onChange={(event) => setValue(event.target.value)}
+        onChange={(event) => setInputValue(event.target.value)}
         value={inputValue}
         className='search-control__textfield'
         placeholder='Search city, state or area'
         id="outlined-start-adornment"
+        onKeyDown={handleEnterDown}
         InputProps={{
           startAdornment: <InputAdornment position="start">
             <Search />
           </InputAdornment>
         }}
       />
-      <ButtonWrapper onClick={handleClick}>Search</ButtonWrapper>
+      <ButtonWrapper onClick={getLocationsList} >Search</ButtonWrapper>
     </FlexContainer>
   );
 }
