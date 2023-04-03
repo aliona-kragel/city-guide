@@ -35,7 +35,6 @@ const AttractionsBlock = () => {
       </FlexContainer>
       <FlexContainer className="attraction__details" direction="column" gap="10px">
         {!!attractionDetails?.preview?.source && <img src={attractionDetails.preview.source} alt={attractionDetails?.name} />}
-        <h3>{attractionDetails?.name}</h3>
         <p>{attractionDetails?.wikipedia_extracts?.text}</p>
       </FlexContainer>
     </FlexContainer>

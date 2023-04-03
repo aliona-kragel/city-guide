@@ -1,11 +1,12 @@
 import { Search } from '@mui/icons-material';
+import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
 import ButtonWrapper from 'components/base/ButtonWrapper';
 import { FlexContainer } from 'components/styled/FlexContainer';
 import useCitiesActions from 'hooks/useCitiesActions';
 import { useTypedSelector } from 'hooks/useTypedSelector';
-import { KeyboardEvent, useState } from 'react';
+import { KeyboardEvent } from 'react';
 import { getLocations } from 'services/getLocations';
 import "./index.scss";
 
@@ -35,11 +36,11 @@ const SearchControl = () => {
         onKeyDown={handleEnterDown}
         InputProps={{
           startAdornment: <InputAdornment position="start">
-            <Search />
+            <FmdGoodIcon />
           </InputAdornment>
         }}
       />
-      <ButtonWrapper onClick={getLocationsList} >Search</ButtonWrapper>
+      <ButtonWrapper onClick={getLocationsList} > <Search /></ButtonWrapper>
     </FlexContainer>
   );
 }

@@ -16,7 +16,7 @@ const PlaceDetails = () => {
     placeDetailsService.getByOsmId(osm_id)
       .then((res) => placeDetailsService.getByLatLongAttractions(res.geometry.coordinates[0], res.geometry.coordinates[1]))
       .then((res) => setAttractionsList(res.features));
-  }, [])
+  }, [setAttractionsList, osm_id])
 
   return (
     <FlexContainer className="place-details__container" direction="column">

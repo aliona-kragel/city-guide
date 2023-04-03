@@ -33,9 +33,9 @@ const AutocompleteTextfield = () => {
       getLocations(inputValue)
         .then((res: any) => {
           let options: LocationTypes[] = res;
-          setOptions(options?.length ? options.filter((options) => options?.raw.osm_type === "relation") : [])
+          setOptions((options?.length) ? (options.filter((options) => options?.raw.osm_type === "relation")) : [])
         })
-    }, [inputValue])
+    }, [inputValue, options?.length])
 
   return (
     <Autocomplete<LocationTypes>
@@ -50,12 +50,14 @@ const AutocompleteTextfield = () => {
       //     border: '2px solid gray',
       //   },
       // }}
+      // loading
+      // loadingText="Loading..."
       filterOptions={(x) => x}
       autoComplete
       includeInputInList
       filterSelectedOptions
       noOptionsText="No locations"
-      isOptionEqualToValue={(option, value) => option?.raw?.place_id === value?.raw?.place_id}
+      isOptionEqualToValue={(option, value) => option?.raw?.osm_id === value?.raw?.osm_id}
       renderInput={(params) => (
         <TextField {...params} label="Search cities" fullWidth />
       )}

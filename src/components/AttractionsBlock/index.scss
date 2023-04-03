@@ -1,7 +1,7 @@
 @import "../.././styles/variables.scss";
 
 .attractions__list{
-  width: 30%;
+  width: 20vw;
   height: calc(100vh - 200px);
   overflow: auto;
   .attraction__item{
@@ -19,5 +19,5 @@
 }
 
 .attraction__details{
-  width: 60vw;
+  width: 50vw;
 }

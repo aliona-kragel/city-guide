@@ -4,6 +4,8 @@ import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import DetailsButton from "components/base/DetailsButton";
 import CitySticker from "components/CitySticker";
 import { useNavigate } from "react-router-dom";
+import { Search } from '@mui/icons-material';
+import AddLocationAltOutlinedIcon from '@mui/icons-material/AddLocationAltOutlined';
 import "./index.scss";
 
 const CitiesList = () => {
@@ -23,7 +25,7 @@ const CitiesList = () => {
           </div>)
       }
       {
-        ((inputValue == "") && <div>Enter smth</div>) || (!!(locationsList?.length == 0) && <div>No matching resulst</div>)
+        ((inputValue === "") && <FlexContainer><AddLocationAltOutlinedIcon />Enter smth</FlexContainer>) || ((locationsList?.length === 0) && <FlexContainer><Search />No matching results</FlexContainer>)
       }
     </FlexContainer>
   )
