@@ -1,0 +1,10 @@
+@import "../../.././styles/variables.scss";
+
+.button__details{
+  width: fit-content;
+  border: none;
+  background: $extra_color;
+  border-radius: 30px;
+  color:#4C4C4C;
+  padding: 4px 8px;
+}

@@ -1,0 +1,23 @@
+@import "../.././styles/variables.scss";
+
+.attractions__list{
+  width: 20vw;
+  height: calc(100vh - 200px);
+  overflow: auto;
+  .attraction__item{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid $main_color;
+    &:hover{
+      background: $main_color;
+    }
+    &.active{
+      background: $extra_color;
+      color: white;
+    }
+  }
+}
+
+.attraction__details{
+  width: 50vw;
+}

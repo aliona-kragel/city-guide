@@ -1,23 +1,30 @@
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import { useEffect, useState } from 'react';
+import { FC, PropsWithChildren, useEffect, useState } from 'react';
 import { getLocations } from 'services/getLocations';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import "./index.scss"
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import useMapActions from 'hooks/useMapActions';
-import { Location } from 'store/slices/map/mapTypes';
+import { LocationTypes } from 'types/locationTypes';
+import "./index.scss"
 
-const AutocompleteTextfield = () => {
+interface IAutocomplete {
+  mapRef?: any
+}
+
+const AutocompleteTextfield: FC<PropsWithChildren<IAutocomplete>> = ({ mapRef }) => {
   const { selectedLocation } = useTypedSelector(state => state.map);
   const { setLocation } = useMapActions();
 
   const [inputValue, setInputValue] = useState<string>("");
-  const [options, setOptions] = useState<Location[]>([]);
+  const [options, setOptions] = useState<LocationTypes[]>([]);
 
-  const handleChange = (event: React.SyntheticEvent<Element, Event>, newValue: Location | null): void => {
+  const handleChange = (event: React.SyntheticEvent<Element, Event>, newValue: LocationTypes | null): void => {
     if (newValue) {
       setLocation(newValue);
+      mapRef.current.flyTo([newValue.y, newValue.x], 11, {
+        duration: 3
+      });
     }
   }
   const handleInputChange = (event: React.SyntheticEvent<EventTarget>, newInputValue: string): void => {
@@ -31,32 +38,30 @@ const AutocompleteTextfield = () => {
         return;
       }
       getLocations(inputValue)
-        .then((res: any) => setOptions(res?.length ? res : []))
-    }, [inputValue])
+        .then((res: any) => {
+          let options: LocationTypes[] = res;
+          setOptions((options?.length) ? (options.filter((options) => options?.raw.osm_type === "relation")) : [])
+        })
+    }, [inputValue, options?.length])
 
   return (
-    <Autocomplete<Location>
-      className='search__container'
+    <Autocomplete<LocationTypes>
+      className='autocomplete__container'
       id="autocomplete"
       value={selectedLocation || null}
       options={options}
       onChange={handleChange}
       onInputChange={handleInputChange}
-      sx={{
-        '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-          border: '2px solid gray',
-        },
-      }}
       filterOptions={(x) => x}
       autoComplete
       includeInputInList
       filterSelectedOptions
       noOptionsText="No locations"
-      isOptionEqualToValue={(option, value) => option?.raw?.place_id === value?.raw?.place_id}
+      isOptionEqualToValue={(option, value) => option?.raw?.osm_id === value?.raw?.osm_id}
       renderInput={(params) => (
         <TextField {...params} label="Search cities" fullWidth />
       )}
-      renderOption={(props, option: Location) => (
+      renderOption={(props, option: LocationTypes) => (
         <li {...props} key={option?.raw.place_id} >
           <LocationOnIcon sx={{ color: 'text.secondary' }} />
           {option?.raw.display_name}</li>

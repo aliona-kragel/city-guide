@@ -1,0 +1,12 @@
+@import "../.././styles/variables.scss";
+
+div .search-control__container{
+  width: 80%;
+  margin-bottom: 30px;
+  .search-control__textfield{
+    width: 100%;
+    svg path{
+      fill: $extra_color;
+    }
+  }
+}
