@@ -9,14 +9,17 @@ import "./index.scss";
 
 const PlaceDetails = () => {
   let { osm_id } = useParams();
-  const { setAttractionsList } = useCitiesActions();
+  const { setAttractionsList, setLocationDescription } = useCitiesActions();
 
   useEffect(() => {
     if (!(osm_id)) return;
     placeDetailsService.getByOsmId(osm_id)
-      .then((res) => placeDetailsService.getByLatLongAttractions(res.geometry.coordinates[0], res.geometry.coordinates[1]))
+      .then((res) => {
+        setLocationDescription(res);
+        return placeDetailsService.getByLatLongAttractions(res.geometry.coordinates[0], res.geometry.coordinates[1]);
+      })
       .then((res) => setAttractionsList(res.features));
-  }, [setAttractionsList, osm_id])
+  }, [setAttractionsList, osm_id, setLocationDescription])
 
   return (
     <FlexContainer className="place-details__container" direction="column">

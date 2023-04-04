@@ -1,14 +1,18 @@
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import { useEffect, useState } from 'react';
+import { FC, PropsWithChildren, useEffect, useState } from 'react';
 import { getLocations } from 'services/getLocations';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import "./index.scss"
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import useMapActions from 'hooks/useMapActions';
 import { LocationTypes } from 'types/locationTypes';
+import "./index.scss"
 
-const AutocompleteTextfield = () => {
+interface IAutocomplete {
+  mapRef?: any
+}
+
+const AutocompleteTextfield: FC<PropsWithChildren<IAutocomplete>> = ({ mapRef }) => {
   const { selectedLocation } = useTypedSelector(state => state.map);
   const { setLocation } = useMapActions();
 
@@ -18,6 +22,9 @@ const AutocompleteTextfield = () => {
   const handleChange = (event: React.SyntheticEvent<Element, Event>, newValue: LocationTypes | null): void => {
     if (newValue) {
       setLocation(newValue);
+      mapRef.current.flyTo([newValue.y, newValue.x], 11, {
+        duration: 3
+      });
     }
   }
   const handleInputChange = (event: React.SyntheticEvent<EventTarget>, newInputValue: string): void => {
@@ -45,13 +52,6 @@ const AutocompleteTextfield = () => {
       options={options}
       onChange={handleChange}
       onInputChange={handleInputChange}
-      // sx={{
-      //   '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-      //     border: '2px solid gray',
-      //   },
-      // }}
-      // loading
-      // loadingText="Loading..."
       filterOptions={(x) => x}
       autoComplete
       includeInputInList

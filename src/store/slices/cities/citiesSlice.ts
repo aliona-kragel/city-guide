@@ -1,11 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { LocationTypes } from "types/locationTypes";
-import { ICities, IAttractionsListTypes, IAttractionDetailsTypes } from "./citiesTypes";
+import { ICities, IAttractionsListTypes, IAttractionDetailsTypes, ICityDescriptionTypes } from "./citiesTypes";
 
 const initialState: ICities = {
   locationsList: [],
   attractionsList: [],
   attractionDetails: null,
+  locationDescription: null,
   inputValue: "",
 }
 
@@ -21,6 +22,9 @@ const citiesSlice = createSlice({
     },
     setAttractionDetails: (state, action: PayloadAction<IAttractionDetailsTypes>) => {
       state.attractionDetails = action.payload;
+    },
+    setLocationDescription: (state, action: PayloadAction<ICityDescriptionTypes>) => {
+      state.locationDescription = action.payload
     },
     clearCitieState: (state) => {
       state.attractionsList = [];
