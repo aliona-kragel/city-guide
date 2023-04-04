@@ -7,6 +7,7 @@ interface IFlexContainer {
   gap?: string;
   margin?: string;
   padding?: string;
+  height?: string;
 }
 
 export const FlexContainer = styled.div<IFlexContainer>`
@@ -17,4 +18,5 @@ export const FlexContainer = styled.div<IFlexContainer>`
   gap: ${({ gap }) => gap || "0px"};
   margin: ${({ margin }) => margin || "0px"};
   padding: ${({ padding }) => padding || "0px"};
+  height: ${({ height }) => height || ""}
 `

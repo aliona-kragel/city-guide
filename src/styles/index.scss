@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +12,7 @@ body{
     size: 1rem;
     weight: 500;
   }
-  color: rgba(128, 128, 128, 1)
+  color: $main_text_color;
 }
 
 .App {
@@ -19,5 +21,5 @@ body{
 
 a {
   text-decoration: none;
-  color: rgba(128, 128, 128, 1)
+  color: $main_text_color
 }

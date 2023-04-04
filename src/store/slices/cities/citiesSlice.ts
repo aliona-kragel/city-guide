@@ -26,7 +26,7 @@ const citiesSlice = createSlice({
     setLocationDescription: (state, action: PayloadAction<ICityDescriptionTypes>) => {
       state.locationDescription = action.payload
     },
-    clearCitieState: (state) => {
+    clearCitiesState: (state) => {
       state.attractionsList = [];
       state.attractionDetails = null
     },

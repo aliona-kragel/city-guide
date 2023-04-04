@@ -6,7 +6,7 @@ import { FlexContainer } from "../../components/styled/FlexContainer";
 const MainLayout = () => {
   return (
     <section>
-      <FlexContainer justify="space-between" gap="20px">
+      <FlexContainer justify="flex-start" align="flex-starts" gap="20px">
         <NavMenu />
         <Outlet />
       </FlexContainer>

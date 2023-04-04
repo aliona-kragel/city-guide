@@ -6,12 +6,16 @@ import NotListedLocationOutlinedIcon from '@mui/icons-material/NotListedLocation
 import PublicOutlinedIcon from '@mui/icons-material/PublicOutlined';
 import OutlinedFlagTwoToneIcon from '@mui/icons-material/OutlinedFlagTwoTone';
 import { Tag } from "components/Tag";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const CityDescription = () => {
   const { locationDescription } = useTypedSelector(state => state.cities);
   return (
     <CityDescriptionContainer>
-      <h2>{locationDescription?.localname}</h2>
+      <FlexContainer gap="10px">
+        <LocationOnIcon />
+        <h1>{locationDescription?.localname}</h1>
+      </FlexContainer>
       <FlexContainer gap="2rem" justify="space-between">
         <Tag direction="column" align="flex-start">
           <FlexContainer gap="0.5rem">
@@ -58,10 +62,11 @@ const CityDescription = () => {
 export default CityDescription
 
 const CityDescriptionContainer = styled.div`
-width: 50vw;
+width: 100%;
 display: flex;
 flex-direction: column;
 align-items: flex-start;
+justify-content: flex-start;
 gap: 1rem;
   .city-desc__icon{
     position: absolute;
