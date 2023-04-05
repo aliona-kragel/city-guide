@@ -32,6 +32,13 @@ const SearchControl = () => {
   return (
     <FlexContainer className='search-control__container' gap='10px'>
       <TextField
+        sx={{
+          "& .MuiOutlinedInput-root.Mui-focused": {
+            "& > fieldset": {
+              borderColor: "lightgrey"
+            }
+          }
+        }}
         onChange={(event) => setInputValue(event.target.value)}
         value={inputValue}
         className='search-control__textfield'

@@ -46,6 +46,13 @@ const AutocompleteTextfield: FC<PropsWithChildren<IAutocomplete>> = ({ mapRef })
 
   return (
     <Autocomplete<LocationTypes>
+      sx={{
+        "& .MuiOutlinedInput-root.Mui-focused": {
+          "& > fieldset": {
+            borderColor: "lightgrey"
+          }
+        }
+      }}
       className='autocomplete__container'
       id="autocomplete"
       value={selectedLocation || null}
