@@ -5,7 +5,8 @@ export interface ICities {
   attractionsList: IAttractionsListTypes[] | null,
   attractionDetails: IAttractionDetailsTypes | null,
   locationDescription: ICityDescriptionTypes | null,
-  inputValue: string
+  inputValue: string,
+  responseReceived: boolean
 }
 
 export interface IAttractionsListTypes {

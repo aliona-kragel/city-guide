@@ -12,13 +12,17 @@ import "./index.scss";
 
 
 const SearchControl = () => {
-  const { setLocationsList, setInputValue } = useCitiesActions();
+  const { setLocationsList, setInputValue, setResponseReceived } = useCitiesActions();
   const { inputValue } = useTypedSelector(state => state.cities);
 
   const getLocationsList = () => {
     getLocations(inputValue)
-      .then((res: any) => setLocationsList(res));
+      .then((res: any) => {
+        setLocationsList(res)
+        setResponseReceived(true);
+      });
   }
+
   const handleEnterDown = (e: KeyboardEvent<HTMLImageElement>) => {
     if (e.key === "Enter") {
       getLocationsList()
@@ -34,13 +38,14 @@ const SearchControl = () => {
         placeholder='Search city, state or area'
         id="outlined-start-adornment"
         onKeyDown={handleEnterDown}
+        autoComplete='off'
         InputProps={{
           startAdornment: <InputAdornment position="start">
             <FmdGoodIcon />
           </InputAdornment>
         }}
       />
-      <ButtonWrapper onClick={getLocationsList} > <Search /></ButtonWrapper>
+      <ButtonWrapper onClick={getLocationsList} > <Search fontSize='large' /></ButtonWrapper>
     </FlexContainer>
   );
 }

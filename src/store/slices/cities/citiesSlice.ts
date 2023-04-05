@@ -8,6 +8,7 @@ const initialState: ICities = {
   attractionDetails: null,
   locationDescription: null,
   inputValue: "",
+  responseReceived: false
 }
 
 const citiesSlice = createSlice({
@@ -32,6 +33,9 @@ const citiesSlice = createSlice({
     },
     setInputValue: (state, action: PayloadAction<string>) => {
       state.inputValue = action.payload;
+    },
+    setResponseReceived: (state, action: PayloadAction<boolean>) => {
+      state.responseReceived = action.payload;
     }
   }
 })
