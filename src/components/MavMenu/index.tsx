@@ -4,17 +4,19 @@ import HomeWorkOutlinedIcon from '@mui/icons-material/HomeWorkOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import "./index.scss";
+import Logo from "components/Logo";
 
 const NavMenu = () => {
   return (
     <FlexContainer className="nav__container" direction="column" align="flex-start" justify="space-around" >
+      <Logo />
       <div className="nav__links">
         <LinkItem to="map">
-          <MapOutlinedIcon />
+          <MapOutlinedIcon fontSize="small" />
           <span>Map</span>
         </LinkItem>
         <LinkItem to="cities">
-          <HomeWorkOutlinedIcon />
+          <HomeWorkOutlinedIcon fontSize="small" />
           <span>Cities</span>
         </LinkItem>
       </div>

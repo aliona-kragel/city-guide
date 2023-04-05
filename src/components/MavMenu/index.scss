@@ -5,8 +5,8 @@ div .nav__container{
   min-width: 240px;
   height: calc(100vh - 40px);
   background: $main_color;
-  padding-left: 30px;
-  border-radius: 15px;
+  padding: 0 30px 120px;
+  border-radius: 4px;
   svg{
     width: 2rem;
     height:  2rem;
@@ -24,5 +24,9 @@ div .nav__container{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: rgba(166, 89, 89, 1)
+  color: rgba(166, 89, 89, 1);
+  svg{
+    stroke: $main_color;    
+    stroke-width: 1;
+  }
 }
