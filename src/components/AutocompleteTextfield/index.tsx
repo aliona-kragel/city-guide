@@ -6,6 +6,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import useMapActions from 'hooks/useMapActions';
 import { LocationTypes } from 'types/locationTypes';
+import { useTranslation } from 'react-i18next';
 import "./index.scss"
 
 interface IAutocomplete {
@@ -15,9 +16,9 @@ interface IAutocomplete {
 const AutocompleteTextfield: FC<PropsWithChildren<IAutocomplete>> = ({ mapRef }) => {
   const { selectedLocation } = useTypedSelector(state => state.map);
   const { setLocation } = useMapActions();
-
   const [inputValue, setInputValue] = useState<string>("");
   const [options, setOptions] = useState<LocationTypes[]>([]);
+  const { t } = useTranslation()
 
   const handleChange = (event: React.SyntheticEvent<Element, Event>, newValue: LocationTypes | null): void => {
     if (newValue) {
@@ -63,10 +64,10 @@ const AutocompleteTextfield: FC<PropsWithChildren<IAutocomplete>> = ({ mapRef })
       autoComplete
       includeInputInList
       filterSelectedOptions
-      noOptionsText="No locations"
+      noOptionsText={t("noLocations")}
       isOptionEqualToValue={(option, value) => option?.raw?.osm_id === value?.raw?.osm_id}
       renderInput={(params) => (
-        <TextField {...params} label="Search cities" fullWidth />
+        <TextField {...params} label={t("labelderAutocomplete")} fullWidth />
       )}
       renderOption={(props, option: LocationTypes) => (
         <li {...props} key={option?.raw.place_id} >

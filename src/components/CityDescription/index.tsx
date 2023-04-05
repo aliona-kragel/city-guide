@@ -7,9 +7,12 @@ import PublicOutlinedIcon from '@mui/icons-material/PublicOutlined';
 import OutlinedFlagTwoToneIcon from '@mui/icons-material/OutlinedFlagTwoTone';
 import { Tag } from "components/Tag";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { useTranslation } from "react-i18next";
 
 const CityDescription = () => {
   const { locationDescription } = useTypedSelector(state => state.cities);
+  const { t } = useTranslation()
+
   return (
     <CityDescriptionContainer>
       <FlexContainer gap="10px">
@@ -22,7 +25,7 @@ const CityDescription = () => {
             <PublicOutlinedIcon className="city-desc__icon" />
             <TagMainInfo textTransform="uppercase">{locationDescription?.country_code}</TagMainInfo>
           </FlexContainer>
-          <TagDescription>Country code</TagDescription>
+          <TagDescription>{t("countryCode")}</TagDescription>
         </Tag>
         {
           locationDescription?.extratags?.linked_place &&
@@ -31,7 +34,7 @@ const CityDescription = () => {
               <NotListedLocationOutlinedIcon className="city-desc__icon" />
               <TagMainInfo textTransform="capitalize">{locationDescription?.extratags.linked_place}</TagMainInfo>
             </FlexContainer>
-            <TagDescription>Type of place</TagDescription>
+            <TagDescription>{t("typeOfPlace")}</TagDescription>
           </Tag>
         }
         {
@@ -39,9 +42,9 @@ const CityDescription = () => {
           <Tag direction="column" align="flex-start">
             <FlexContainer justify="flex-start" gap="0.5rem">
               <OutlinedFlagTwoToneIcon className="city-desc__icon" />
-              <TagMainInfo textTransform="capitalize">capital</TagMainInfo>
+              <TagMainInfo textTransform="capitalize">{t("capital")}</TagMainInfo>
             </FlexContainer>
-            <TagDescription>City category</TagDescription>
+            <TagDescription>{t("cityCategory")}</TagDescription>
           </Tag>
         }
         {
@@ -51,7 +54,7 @@ const CityDescription = () => {
               <GroupsOutlinedIcon className="city-desc__icon" />
               <TagMainInfo>{locationDescription?.extratags.population}</TagMainInfo>
             </FlexContainer>
-            <TagDescription>Population</TagDescription>
+            <TagDescription>{t("population")}</TagDescription>
           </Tag >
         }
       </FlexContainer>

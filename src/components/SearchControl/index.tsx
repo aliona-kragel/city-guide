@@ -7,6 +7,7 @@ import { FlexContainer } from 'components/styled/FlexContainer';
 import useCitiesActions from 'hooks/useCitiesActions';
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import { KeyboardEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 import { getLocations } from 'services/getLocations';
 import "./index.scss";
 
@@ -14,6 +15,7 @@ import "./index.scss";
 const SearchControl = () => {
   const { setLocationsList, setInputValue, setResponseReceived } = useCitiesActions();
   const { inputValue } = useTypedSelector(state => state.cities);
+  const { t } = useTranslation();
 
   const getLocationsList = () => {
     getLocations(inputValue)
@@ -39,10 +41,11 @@ const SearchControl = () => {
             }
           }
         }}
+
         onChange={(event) => setInputValue(event.target.value)}
         value={inputValue}
         className='search-control__textfield'
-        placeholder='Search city, state or area'
+        label={t("labelSearchControl")}
         id="outlined-start-adornment"
         onKeyDown={handleEnterDown}
         autoComplete='off'

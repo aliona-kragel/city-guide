@@ -7,10 +7,12 @@ import { useNavigate } from "react-router-dom";
 import { Search } from '@mui/icons-material';
 import AddLocationAltOutlinedIcon from '@mui/icons-material/AddLocationAltOutlined';
 import "./index.scss";
+import { useTranslation } from "react-i18next";
 
 const CitiesList = () => {
   const { locationsList, responseReceived } = useTypedSelector(state => state.cities);
   const navigate = useNavigate();
+  const { t } = useTranslation()
   return (
     <FlexContainer className="locations__list" direction="column" align="center" gap="10px" >
       {
@@ -21,15 +23,15 @@ const CitiesList = () => {
               <PlaceOutlinedIcon />
               <span>{item.label}</span>
             </FlexContainer>
-            <DetailsButton onClick={() => navigate(`/cities/${item.raw.osm_id}`)}>view more</DetailsButton>
+            <DetailsButton onClick={() => navigate(`/cities/${item.raw.osm_id}`)}>{t("viewMore")}</DetailsButton>
           </div>) : (
           <FlexContainer gap="10px">
             {(responseReceived) ?
               <><Search color="disabled" />
-                <span className="location__notification">No matching results</span>
+                <span className="location__notification">{t("noMatches")}</span>
               </> :
               <><AddLocationAltOutlinedIcon color="disabled" />
-                <span className="location__notification">Type value and click "Enter"</span>
+                <span className="location__notification">{t("typeValue")}</span>
               </>}
           </FlexContainer>
         )

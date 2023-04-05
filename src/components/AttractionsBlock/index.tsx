@@ -6,11 +6,13 @@ import placeDetailsService from "services/getPlaceDetails";
 import ImageNotSupportedOutlinedIcon from '@mui/icons-material/ImageNotSupportedOutlined';
 import styled from "styled-components";
 import "./index.scss";
+import { useTranslation } from "react-i18next";
 
 const AttractionsBlock = () => {
   const { attractionsList, attractionDetails } = useTypedSelector(state => state.cities);
   const { setAttractionDetails, clearCitiesState } = useCitiesActions();
   const [activeAttractionId, setActiveAttractionId] = useState<string | undefined>();
+  const { t } = useTranslation()
 
   const handleClick = (attraction: string | undefined) => {
     setActiveAttractionId(attraction);
@@ -30,7 +32,7 @@ const AttractionsBlock = () => {
     <FlexContainer direction="column" align="flex-start" gap="10px" justify="space-between" >
       {!!attractionsList?.length &&
         <>
-          <Subtitle>Attractions</Subtitle>
+          <Subtitle>{t("attractions")}</Subtitle>
           <FlexContainer className="attractions__block" gap="20px">
             <FlexContainer
               className="attractions__list"
@@ -57,7 +59,7 @@ const AttractionsBlock = () => {
                 }
                 {
                   attractionDetails?.wikipedia_extracts?.text ?
-                    <p className="attraction__details-content">{attractionDetails?.wikipedia_extracts?.text}</p> : <p style={{ color: `lightgray` }}>No description</p>
+                    <p className="attraction__details-content">{attractionDetails?.wikipedia_extracts?.text}</p> : <p style={{ color: `lightgray` }}>{t("noDescription")}</p>
                 }
               </FlexContainer>
             }

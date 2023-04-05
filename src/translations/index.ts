@@ -1,0 +1,36 @@
+
+export const translationsEn = {
+  map: "Map",
+  cities: "Cities",
+  attractions: "Attractions",
+  noDescription: "No description",
+  noLocations: "No locations",
+  labelderAutocomplete: "Search cities",
+  viewMore: "View more",
+  noMatches: "No matching results",
+  typeValue: "Type value and click `Enter`",
+  labelSearchControl: "Search location",
+  countryCode: "Country code",
+  typeOfPlace: "Type of place",
+  cityCategory: "City category",
+  capital: "capital",
+  population: "Population",
+};
+
+export const translationsRu = {
+  map: "Карта",
+  cities: "Города",
+  attractions: "Достопримечательности",
+  noDescription: "Нет описания",
+  noLocations: "Нет локаций",
+  labelderAutocomplete: "Поиск городов",
+  viewMore: "Посмотреть больше",
+  noMatches: "Нет совпадений",
+  typeValue: "Введите значение и нажмите `Enter`",
+  labelSearchControl: "Поиск локации",
+  countryCode: "Код страны",
+  typeOfPlace: "Тип населенного пункта",
+  cityCategory: "Категория города",
+  capital: "столица",
+  population: "Население",
+};
