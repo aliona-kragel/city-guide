@@ -35,7 +35,7 @@ const SearchControl = () => {
         sx={{
           "& .MuiOutlinedInput-root.Mui-focused": {
             "& > fieldset": {
-              borderColor: "lightgrey"
+              borderColor: "#B4CD93"
             }
           }
         }}

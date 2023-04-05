@@ -13,16 +13,15 @@ const MapBlock: FC<PropsWithChildren<IMapBlock>> = ({ mapRef }) => {
   const { selectedLocation } = useTypedSelector(state => state.map);
 
   return (
-    <MapContainer ref={mapRef} center={markerPosition} zoom={2} scrollWheelZoom={false} className="map-block__container" transform3DLimit={13}>
+    <MapContainer ref={mapRef} center={markerPosition} zoom={5} scrollWheelZoom={false} className="map-block__container" transform3DLimit={13}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-
       {!!markerPosition && (
         <Marker position={markerPosition}>
           {!!selectedLocation?.raw.osm_id &&
-            <Popup className="popup">
+            <Popup className="weather__popup">
               <WeatherInfo />
             </Popup>
           }

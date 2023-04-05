@@ -1,4 +1,18 @@
+@import "../.././styles/variables.scss";
+
 .map-block__container{
   width: 80%;
-  height: 500px;
+  height: 100vh;
+  .weather__popup{  
+    min-width: 300px;
+    font-size: 0.75rem;
+    a{
+      color: $main_text_color;
+      &:hover{
+        text-decoration: underline;
+        border-color: white;
+      }
+    }
+  }
 }
+

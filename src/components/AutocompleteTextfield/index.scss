@@ -1,5 +1,7 @@
+@import "../.././styles/variables.scss";
+
 label.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
-  color: gray;
+  color: $secondary_color;
 }
 
 .autocomplete__container{
