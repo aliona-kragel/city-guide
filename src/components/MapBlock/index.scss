@@ -3,6 +3,7 @@
 .map-block__container{
   width: 80%;
   height: 100vh;
+  box-shadow: $main_box_shadow;
   .weather__popup{  
     min-width: 300px;
     font-size: 0.75rem;

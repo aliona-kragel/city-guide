@@ -22,7 +22,8 @@
 
 .active__link{
   background: $extra_color;
-  color:$main_text_color;
+  color: $main_text_color;
+  box-shadow: $main_box_shadow;
   transition: ease-in-out;
   svg{
     stroke: $extra_color;

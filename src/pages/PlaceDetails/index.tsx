@@ -27,7 +27,13 @@ const PlaceDetails = () => {
   }, [setAttractionsList, osm_id, setLocationDescription])
 
   return (
-    <FlexContainer direction="column" align="flex-start" justify="space-between" gap="20px" height="calc(100vh - 40px)">
+    <FlexContainer
+      direction="column"
+      align="flex-start"
+      justify="space-between"
+      gap="20px"
+      height="calc(100vh - 40px)"
+      width="100%">
       <CityDescription />
       <AttractionsBlock />
     </FlexContainer>

@@ -56,11 +56,13 @@ const AttractionsBlock = () => {
               <FlexContainer className="attraction__details" direction="column" gap="10px" padding="10px" >
                 {
                   attractionDetails?.preview?.source ?
-                    <Picture src={attractionDetails.preview.source} alt={attractionDetails?.name} /> : <ImageNotSupportedOutlinedIcon fontSize="large" color="disabled" />
+                    <Picture src={attractionDetails.preview.source} alt={attractionDetails?.name} /> :
+                    <ImageNotSupportedOutlinedIcon fontSize="large" color="disabled" />
                 }
                 {
                   attractionDetails?.wikipedia_extracts?.text ?
-                    <p className="attraction__details-content">{attractionDetails?.wikipedia_extracts?.text}</p> : <p style={{ color: `lightgray` }}>{t("noDescription")}</p>
+                    <p className="attraction__details-content">{attractionDetails?.wikipedia_extracts?.text}</p> :
+                    <p style={{ color: `lightgray` }}>{t("noDescription")}</p>
                 }
               </FlexContainer>
             }

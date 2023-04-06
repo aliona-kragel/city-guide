@@ -7,4 +7,13 @@
   border-radius: 30px;
   color:#4C4C4C;
   padding: 4px 8px;
+  box-shadow: $main_box_shadow;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  &:hover{
+    background: $btn_hover;
+  }
+  &:active{
+    background: $btn_active;
+  }
 }

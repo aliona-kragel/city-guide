@@ -5,6 +5,8 @@ div .search-control__container{
   margin-bottom: 30px;
   .search-control__textfield{
     width: 100%;
+    border-radius: 4px;
+    box-shadow: $main_box_shadow;
     svg path{
       fill: $extra_color;
     }
