@@ -1,9 +1,0 @@
-@import "../../../styles/variables.scss";
-
-.bread__crumb{
-  color: $extra_color;
-  &:hover{
-    color: $secondary_color;
-    text-decoration: underline;
-  }
-}
