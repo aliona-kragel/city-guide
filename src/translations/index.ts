@@ -15,6 +15,7 @@ export const translationsEn = {
   cityCategory: "City category",
   capital: "capital",
   population: "Population",
+  cityDetails: "City details",
 };
 
 export const translationsRu = {
@@ -33,4 +34,5 @@ export const translationsRu = {
   cityCategory: "Категория города",
   capital: "столица",
   population: "Население",
+  cityDetails: "Детали города",
 };

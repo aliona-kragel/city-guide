@@ -8,6 +8,7 @@ import OutlinedFlagTwoToneIcon from '@mui/icons-material/OutlinedFlagTwoTone';
 import { Tag } from "components/Tag";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { useTranslation } from "react-i18next";
+import BreadCrumbs from "components/BreadCrumbs";
 
 const CityDescription = () => {
   const { locationDescription } = useTypedSelector(state => state.cities);
@@ -15,9 +16,12 @@ const CityDescription = () => {
 
   return (
     <CityDescriptionContainer>
-      <FlexContainer gap="10px">
-        <LocationOnIcon />
-        <h1>{locationDescription?.localname}</h1>
+      <FlexContainer justify="space-between" width="100%">
+        <FlexContainer gap="10px">
+          <LocationOnIcon />
+          <h1>{locationDescription?.localname}</h1>
+        </FlexContainer>
+        <BreadCrumbs />
       </FlexContainer>
       <FlexContainer gap="2rem" justify="space-between">
         <Tag direction="column" align="flex-start">

@@ -13,6 +13,7 @@ div .select__lang{
     border: none;
     color: $extra_text_color;
     outline: none;
+    cursor: pointer;
   }
   svg{
     stroke: $main_color;    
