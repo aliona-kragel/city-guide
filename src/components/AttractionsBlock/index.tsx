@@ -22,6 +22,7 @@ const AttractionsBlock = () => {
     if (!(activeAttractionId)) return;
     placeDetailsService.getbyXid(activeAttractionId)
       .then(res => setAttractionDetails(res))
+      .catch(err => console.log(err.message));
   }, [activeAttractionId, setAttractionDetails])
 
   useEffect(() => {

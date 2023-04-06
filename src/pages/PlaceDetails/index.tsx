@@ -11,14 +11,19 @@ const PlaceDetails = () => {
   let { osm_id } = useParams();
   const { setAttractionsList, setLocationDescription } = useCitiesActions();
 
+  const getAttractionsList = (res: any) => {
+    placeDetailsService.getByLatLongAttractions(res.geometry.coordinates[0], res.geometry.coordinates[1])
+      .then((res) => setAttractionsList(res.features))
+      .catch(err => console.log(err.message));
+  }
+
   useEffect(() => {
     if (!(osm_id)) return;
     placeDetailsService.getByOsmId(osm_id)
       .then((res) => {
         setLocationDescription(res);
-        return placeDetailsService.getByLatLongAttractions(res.geometry.coordinates[0], res.geometry.coordinates[1]);
-      })
-      .then((res) => setAttractionsList(res.features));
+        getAttractionsList(res);
+      }).catch(err => console.log(err.message));
   }, [setAttractionsList, osm_id, setLocationDescription])
 
   return (

@@ -13,9 +13,9 @@ const WeatherInfo = () => {
   useEffect(() => {
     if (!(selectedLocation?.y && selectedLocation?.x)) return;
     weatherService.getCurrentWeather(selectedLocation?.y, selectedLocation?.x)
-      .then(res => setWeather(res));
+      .then(res => setWeather(res))
+      .catch(err => console.log(err.message));
   }, [selectedLocation])
-  console.log(selectedLocation);
 
   const icon = `http://openweathermap.org/img/w/${currentWeather?.weather[0].icon}.png`
 
