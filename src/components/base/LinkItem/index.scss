@@ -1,0 +1,33 @@
+@import "../../../styles/variables.scss";
+
+.link__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:  space-evenly;
+  padding: 5px 0;
+  color: $secondary_color;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: 0.3s ease-in-out;
+  svg{
+    stroke: $main_color;    
+    stroke-width: 1;
+  }
+  &:hover{
+    color: #4C4C4C;
+    border: 1px solid $extra_color;
+  }
+}
+
+.active__link{
+  background: $extra_color;
+  color: $main_text_color;
+  box-shadow: $main_box_shadow;
+  transition: ease-in-out;
+  svg{
+    stroke: $extra_color;
+    stroke-width: 1;
+  }
+}
+

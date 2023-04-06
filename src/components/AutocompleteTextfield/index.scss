@@ -1,0 +1,13 @@
+@import "../.././styles/variables.scss";
+
+label.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: $secondary_color;
+}
+
+.autocomplete__container{
+  width: 80%;
+  margin-bottom: 40px;
+  box-shadow: $main_box_shadow;
+  border-radius: 4px;
+}
+

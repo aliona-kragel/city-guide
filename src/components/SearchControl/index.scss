@@ -1,0 +1,14 @@
+@import "../.././styles/variables.scss";
+
+div .search-control__container{
+  width: 80%;
+  margin-bottom: 30px;
+  .search-control__textfield{
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: $main_box_shadow;
+    svg path{
+      fill: $extra_color;
+    }
+  }
+}

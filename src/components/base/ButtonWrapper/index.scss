@@ -1,0 +1,28 @@
+@import "../../.././styles/variables.scss";
+
+.button__wrapper{
+  border: none;
+  background: $extra_color;
+  height: 3.5rem;
+  width: fit-content;
+  border-radius: 4px;
+  line-height: 16px;
+  color:#4C4C4C;
+  padding: 0 15px;
+  box-shadow: $main_box_shadow;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  font: {
+    size: 12px;
+    weight: 600;
+  }
+  &:hover{
+    background: $btn_hover;
+  }
+  &:active{
+    background: $btn_active;
+  }
+  svg path{
+    fill: white;
+  }
+}

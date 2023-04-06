@@ -1,0 +1,25 @@
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font: {
+    family: Manrope, sans-serif;
+    size: 1rem;
+    weight: 500;
+  }
+  color: $main_text_color;
+}
+
+.App {
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: $main_text_color
+}
