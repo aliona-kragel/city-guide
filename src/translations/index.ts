@@ -2,6 +2,7 @@
 export const translationsEn = {
   map: "Map",
   cities: "Cities",
+  news: "News",
   attractions: "Attractions",
   noDescription: "No description",
   noLocations: "No locations",
@@ -21,6 +22,7 @@ export const translationsEn = {
 export const translationsRu = {
   map: "Карта",
   cities: "Города",
+  news: "Новости",
   attractions: "Достопримечательности",
   noDescription: "Нет описания",
   noLocations: "Нет локаций",

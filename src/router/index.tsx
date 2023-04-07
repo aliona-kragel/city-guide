@@ -1,3 +1,4 @@
+import News from 'pages/News';
 import PlaceDetails from 'pages/PlaceDetails';
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
 import MainLayout from '../layouts/MainLayout';
@@ -10,6 +11,7 @@ export const router = createBrowserRouter(createRoutesFromElements(
       <Route path="map" element={<Map />} />
       <Route path="cities" element={<Cities />} />
       <Route path="/cities/:osm_id" element={<PlaceDetails />} />
+      <Route path="news" element={<News />} />
     </Route >
   </>
 ))
