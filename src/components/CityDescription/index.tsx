@@ -10,8 +10,8 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { useTranslation } from "react-i18next";
 import BreadCrumbs from "components/BreadCrumbs";
 
-const CityDescription = () => {
-  const { locationDescription } = useTypedSelector(state => state.cities);
+const PlaceDescription = () => {
+  const { locationDescription } = useTypedSelector(state => state.places);
   const { t } = useTranslation()
 
   return (
@@ -66,7 +66,7 @@ const CityDescription = () => {
   )
 }
 
-export default CityDescription
+export default PlaceDescription;
 
 const CityDescriptionContainer = styled.div`
 width: 100%;

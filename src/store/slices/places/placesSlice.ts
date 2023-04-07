@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { LocationTypes } from "types/locationTypes";
-import { ICities, IAttractionsListTypes, IAttractionDetailsTypes, ICityDescriptionTypes } from "./citiesTypes";
+import { IPlaces, IAttractionsListTypes, IAttractionDetailsTypes, IPlaceDescriptionTypes } from "./placesTypes";
 
-const initialState: ICities = {
+const initialState: IPlaces = {
   locationsList: [],
   attractionsList: [],
   attractionDetails: null,
@@ -11,8 +11,8 @@ const initialState: ICities = {
   responseReceived: false
 }
 
-const citiesSlice = createSlice({
-  name: "cities",
+const placesSlice = createSlice({
+  name: "places",
   initialState,
   reducers: {
     setLocationsList: (state, action: PayloadAction<LocationTypes[]>) => {
@@ -24,7 +24,7 @@ const citiesSlice = createSlice({
     setAttractionDetails: (state, action: PayloadAction<IAttractionDetailsTypes>) => {
       state.attractionDetails = action.payload;
     },
-    setLocationDescription: (state, action: PayloadAction<ICityDescriptionTypes>) => {
+    setLocationDescription: (state, action: PayloadAction<IPlaceDescriptionTypes>) => {
       state.locationDescription = action.payload
     },
     clearCitiesState: (state) => {
@@ -40,4 +40,4 @@ const citiesSlice = createSlice({
   }
 })
 
-export default citiesSlice;
+export default placesSlice;

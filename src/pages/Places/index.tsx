@@ -1,15 +1,15 @@
-import CitiesList from "components/CitiesList";
+import PlacesList from "components/PlacesList";
 import SearchControl from "components/SearchControl";
 import { FlexContainer } from "../../components/styled/FlexContainer";
 import "./index.scss";
 
-const Cities = () => {
+const Places = () => {
   return (
-    <FlexContainer className="cities__container" direction="column" justify='start'>
+    <FlexContainer className="places__container" direction="column" justify='start'>
       <SearchControl />
-      <CitiesList />
+      <PlacesList />
     </FlexContainer>
   )
 }
 
-export default Cities;
+export default Places;

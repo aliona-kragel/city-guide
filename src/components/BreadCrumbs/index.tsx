@@ -10,10 +10,10 @@ const BreadCrumbs = () => {
     <Breadcrumbs
       separator={<NavigateNextIcon fontSize="small" />}
       aria-label="breadcrumb">
-      <LinkBreadCrumb to="/cities">
-        {t("cities")}
+      <LinkBreadCrumb to="/places">
+        {t("places")}
       </LinkBreadCrumb>
-      <Typography color="#93A67E" fontWeight={"500"}>{t("cityDetails")}</Typography>
+      <Typography color="#93A67E" fontWeight={"500"}>{t("placeDetails")}</Typography>
     </Breadcrumbs>
   )
 };

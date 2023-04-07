@@ -21,9 +21,9 @@ const NavMenu = () => {
           <MapOutlinedIcon fontSize="small" />
           <span>{t("map")}</span>
         </LinkItem>
-        <LinkItem to="cities">
+        <LinkItem to="places">
           <HomeWorkOutlinedIcon fontSize="small" />
-          <span>{t("cities")}</span>
+          <span>{t("places")}</span>
         </LinkItem>
         <LinkItem to="news">
           <Newspaper fontSize="small" />

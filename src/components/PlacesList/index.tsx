@@ -1,16 +1,16 @@
 import { FlexContainer } from "components/styled/FlexContainer"
 import { useTypedSelector } from "hooks/useTypedSelector";
-import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import DetailsButton from "components/base/DetailsButton";
-import CitySticker from "components/CitySticker";
+import PlaceSticker from "components/PlaceSticker";
 import { useNavigate } from "react-router-dom";
 import { Search } from '@mui/icons-material';
+import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import AddLocationAltOutlinedIcon from '@mui/icons-material/AddLocationAltOutlined';
-import "./index.scss";
 import { useTranslation } from "react-i18next";
+import "./index.scss";
 
-const CitiesList = () => {
-  const { locationsList, responseReceived } = useTypedSelector(state => state.cities);
+const PlacesList = () => {
+  const { locationsList, responseReceived } = useTypedSelector(state => state.places);
   const navigate = useNavigate();
   const { t } = useTranslation()
   return (
@@ -18,12 +18,12 @@ const CitiesList = () => {
       {
         locationsList?.length ? locationsList.map((item) =>
           <div className="location__item" key={item.raw.osm_id}>
-            <CitySticker>{item.raw.type}</CitySticker>
+            <PlaceSticker>{item.raw.type}</PlaceSticker>
             <FlexContainer justify="flex-start" gap="20px" margin="0 0 10px 0">
               <PlaceOutlinedIcon />
               <span>{item.label}</span>
             </FlexContainer>
-            <DetailsButton onClick={() => navigate(`/cities/${item.raw.osm_id}`)}>{t("viewMore")}</DetailsButton>
+            <DetailsButton onClick={() => navigate(`/places/${item.raw.osm_id}`)}>{t("viewMore")}</DetailsButton>
           </div>) : (
           <FlexContainer gap="10px">
             {(responseReceived) ?
@@ -40,4 +40,4 @@ const CitiesList = () => {
   )
 }
 
-export default CitiesList;
+export default PlacesList;

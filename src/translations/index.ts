@@ -1,7 +1,7 @@
 
 export const translationsEn = {
   map: "Map",
-  cities: "Cities",
+  places: "Places",
   news: "News",
   attractions: "Attractions",
   noDescription: "No description",
@@ -16,12 +16,12 @@ export const translationsEn = {
   cityCategory: "City category",
   capital: "capital",
   population: "Population",
-  cityDetails: "City details",
+  placeDetails: "Place details",
 };
 
 export const translationsRu = {
   map: "Карта",
-  cities: "Города",
+  places: "Города",
   news: "Новости",
   attractions: "Достопримечательности",
   noDescription: "Нет описания",
@@ -36,5 +36,5 @@ export const translationsRu = {
   cityCategory: "Категория города",
   capital: "столица",
   population: "Население",
-  cityDetails: "Детали города",
+  placeDetails: "Детали города",
 };

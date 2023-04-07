@@ -1,5 +1,5 @@
 import { FlexContainer } from "components/styled/FlexContainer";
-import useCitiesActions from "hooks/useCitiesActions";
+import usePlacesActions from "hooks/usePlacesActions";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import { useEffect, useState } from "react";
 import placeDetailsService from "services/getPlaceDetails";
@@ -9,8 +9,8 @@ import "./index.scss";
 import { useTranslation } from "react-i18next";
 
 const AttractionsBlock = () => {
-  const { attractionsList, attractionDetails } = useTypedSelector(state => state.cities);
-  const { setAttractionDetails, clearCitiesState } = useCitiesActions();
+  const { attractionsList, attractionDetails } = useTypedSelector(state => state.places);
+  const { setAttractionDetails, clearCitiesState } = usePlacesActions();
   const [activeAttractionId, setActiveAttractionId] = useState<string | undefined>();
   const { t } = useTranslation()
 

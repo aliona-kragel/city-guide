@@ -4,7 +4,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
 import ButtonWrapper from 'components/base/ButtonWrapper';
 import { FlexContainer } from 'components/styled/FlexContainer';
-import useCitiesActions from 'hooks/useCitiesActions';
+import usePlacesActions from 'hooks/usePlacesActions';
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import { KeyboardEvent } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -13,8 +13,8 @@ import "./index.scss";
 
 
 const SearchControl = () => {
-  const { setLocationsList, setInputValue, setResponseReceived } = useCitiesActions();
-  const { inputValue } = useTypedSelector(state => state.cities);
+  const { setLocationsList, setInputValue, setResponseReceived } = usePlacesActions();
+  const { inputValue } = useTypedSelector(state => state.places);
   const { t } = useTranslation();
 
   const getLocationsList = () => {

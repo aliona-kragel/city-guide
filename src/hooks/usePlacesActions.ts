@@ -1,15 +1,15 @@
 import { bindActionCreators } from "@reduxjs/toolkit";
 import { useMemo } from "react";
 import { useDispatch } from "react-redux"
-import citiesSlice from "store/slices/cities/citiesSlice";
+import placesSlice from "store/slices/places/placesSlice";
 
-const useCitiesActions = () => {
+const usePlacesActions = () => {
   const dispatch = useDispatch();
 
   return useMemo(
-    () => bindActionCreators(citiesSlice.actions, dispatch),
+    () => bindActionCreators(placesSlice.actions, dispatch),
     [dispatch]
   )
 }
 
-export default useCitiesActions;
+export default usePlacesActions;

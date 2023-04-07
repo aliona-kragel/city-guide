@@ -1,10 +1,10 @@
 import { LocationTypes } from "types/locationTypes";
 
-export interface ICities {
+export interface IPlaces {
   locationsList: LocationTypes[] | null,
   attractionsList: IAttractionsListTypes[] | null,
   attractionDetails: IAttractionDetailsTypes | null,
-  locationDescription: ICityDescriptionTypes | null,
+  locationDescription: IPlaceDescriptionTypes | null,
   inputValue: string,
   responseReceived: boolean
 }
@@ -71,7 +71,7 @@ export interface IAttractionDetailsTypes {
   }
 }
 
-export interface ICityDescriptionTypes {
+export interface IPlaceDescriptionTypes {
   place_id: number,
   osm_type: string,
   osm_id: number,
