@@ -14,7 +14,15 @@ const PlacesList = () => {
   const navigate = useNavigate();
   const { t } = useTranslation()
   return (
-    <FlexContainer className="locations__list" direction="column" align="center" gap="10px" >
+    <FlexContainer
+      className="locations__list"
+      width="80%"
+      height="100%"
+      direction="column"
+      align="center"
+      gap="10px"
+      justify="normal"
+      padding="5px 10px">
       {
         locationsList?.length ? locationsList.map((item) =>
           <div className="location__item" key={item.raw.osm_id}>

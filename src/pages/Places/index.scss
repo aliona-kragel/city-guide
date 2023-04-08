@@ -1,4 +1,10 @@
 .places__container{
   flex: 1;
   height: calc(100vh - 40px);
+  background-color: rgba(255, 255, 255, 0.4);
+  background-image: url("../../assets/images/map_bg.jpg");
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
