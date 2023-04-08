@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
-import DetailsButton from "components/base/DetailsButton";
 import Earth from "components/Earth";
+import { FlexContainer } from "components/styled/FlexContainer";
 import { Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
@@ -14,9 +14,10 @@ const Start = () => {
           <Earth />
         </Suspense>
       </Canvas>
-      <Slogan>
-        <DetailsButton onClick={() => navigate(`/map`)}>Get start</DetailsButton>
-      </Slogan>
+      <FlexContainer width="50%" height="100vh" direction="column" align="end">
+        <Slogan>Discover<br />and enjoy your new <br />places and experiences</Slogan>
+        <StartButton onClick={() => navigate(`/map`)}>Get start</StartButton>
+      </FlexContainer>
     </EarthContainer >
   )
 }
@@ -27,12 +28,32 @@ const EarthContainer = styled.section`
 display: flex;
 width: 100vw;
 height: 100vh;
-background-color: rgb(3, 2, 14);
+padding-right: 50px;
+background: linear-gradient(147deg, rgba(10,13,31,1) 32%, rgba(63,64,69,1) 34%, rgba(11,15,37,1) 36%, rgba(42,44,52,1) 45%, rgba(83,84,86,1) 51%, rgba(167,167,157,1) 58%, rgba(198,198,187,1) 66%, rgba(244,244,233,1) 79%);
 `
 
-const Slogan = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-width: 50%;
+const Slogan = styled.h3`
+text-align: end;
+color: #808080;
+font-size: 2.5rem;
+margin-bottom: 4rem;
+`
+
+const StartButton = styled.button`
+border: 2px solid #B4CD93;
+background-color: #B4CD93;
+border-radius: 4px;
+padding: 15px 40px;
+transition: all 0.35s ease-in-out;
+font-size: 1.5rem;
+color: white;
+box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+&:hover{
+  background: none;
+  color: #B4CD93;
+&:active{
+  background-color: #B4CD93;
+  color: white;
+  }
+}
 `
