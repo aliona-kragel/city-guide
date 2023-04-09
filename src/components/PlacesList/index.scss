@@ -12,7 +12,7 @@
 .location__item{
   position: relative;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: $main_transparent_bgc;
   border-radius: 20px;
   box-shadow: $main_box_shadow;
   padding: 35px 10px 10px 10px;

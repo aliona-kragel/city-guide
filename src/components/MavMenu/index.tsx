@@ -25,10 +25,6 @@ const NavMenu = () => {
           <HomeWorkOutlinedIcon fontSize="small" />
           <span>{t("places")}</span>
         </LinkItem>
-        <LinkItem to="news">
-          <Newspaper fontSize="small" />
-          <span>{t("news")}</span>
-        </LinkItem>
       </div>
       <LanguageSelect />
     </FlexContainer>
