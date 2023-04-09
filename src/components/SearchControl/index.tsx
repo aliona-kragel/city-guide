@@ -1,14 +1,14 @@
+import { KeyboardEvent } from 'react';
+import { useTranslation } from 'react-i18next';
+import usePlacesActions from 'hooks/usePlacesActions';
+import { useTypedSelector } from 'hooks/useTypedSelector';
+import { getLocations } from 'services/getLocations';
+import ButtonWrapper from 'components/base/ButtonWrapper';
+import { FlexContainer } from 'components/styled/FlexContainer';
 import { Search } from '@mui/icons-material';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
-import ButtonWrapper from 'components/base/ButtonWrapper';
-import { FlexContainer } from 'components/styled/FlexContainer';
-import usePlacesActions from 'hooks/usePlacesActions';
-import { useTypedSelector } from 'hooks/useTypedSelector';
-import { KeyboardEvent } from 'react';
-import { useTranslation } from 'react-i18next';
-import { getLocations } from 'services/getLocations';
 import "./index.scss";
 
 

@@ -1,8 +1,8 @@
-import { FlexContainer } from "components/styled/FlexContainer";
-import { useTypedSelector } from "hooks/useTypedSelector";
 import { useEffect, useState } from "react";
 import weatherService from "services/getWeather";
 import { currentWeather } from "types/weatherTypes";
+import { useTypedSelector } from "hooks/useTypedSelector";
+import { FlexContainer } from "components/styled/FlexContainer";
 import LinkItem from "../base/LinkItem";
 import "./index.scss";
 

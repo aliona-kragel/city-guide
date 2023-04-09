@@ -1,12 +1,12 @@
-import { FlexContainer } from "components/styled/FlexContainer"
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { useTypedSelector } from "hooks/useTypedSelector";
+import { FlexContainer } from "components/styled/FlexContainer"
 import DetailsButton from "components/base/DetailsButton";
 import PlaceSticker from "components/PlaceSticker";
-import { useNavigate } from "react-router-dom";
 import { Search } from '@mui/icons-material';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import AddLocationAltOutlinedIcon from '@mui/icons-material/AddLocationAltOutlined';
-import { useTranslation } from "react-i18next";
 import "./index.scss";
 
 const PlacesList = () => {

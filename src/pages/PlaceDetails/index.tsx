@@ -1,10 +1,10 @@
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import usePlacesActions from "hooks/usePlacesActions";
+import placeDetailsService from "services/getPlaceDetails";
 import AttractionsBlock from "components/AttractionsBlock";
 import CityDescription from "components/CityDescription";
 import { FlexContainer } from "components/styled/FlexContainer";
-import usePlacesActions from "hooks/usePlacesActions";
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import placeDetailsService from "services/getPlaceDetails";
 import "./index.scss";
 
 const PlaceDetails = () => {

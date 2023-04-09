@@ -5,13 +5,12 @@ import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import Logo from "components/Logo";
 import LanguageSelect from "components/LanguageSelect";
 import { useTranslation } from "react-i18next";
-import { Newspaper } from "@mui/icons-material";
 import "./index.scss";
 
 
 
 const NavMenu = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <FlexContainer className="nav__container" direction="column" align="flex-start" justify="space-around" >

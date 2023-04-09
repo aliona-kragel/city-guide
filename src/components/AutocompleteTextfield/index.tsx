@@ -1,12 +1,12 @@
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
 import { FC, PropsWithChildren, useEffect, useState } from 'react';
 import { getLocations } from 'services/getLocations';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import useMapActions from 'hooks/useMapActions';
 import { LocationTypes } from 'types/locationTypes';
 import { useTranslation } from 'react-i18next';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
 import "./index.scss"
 
 interface IAutocomplete {

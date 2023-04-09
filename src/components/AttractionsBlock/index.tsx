@@ -1,12 +1,13 @@
-import { FlexContainer } from "components/styled/FlexContainer";
 import usePlacesActions from "hooks/usePlacesActions";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import placeDetailsService from "services/getPlaceDetails";
 import ImageNotSupportedOutlinedIcon from '@mui/icons-material/ImageNotSupportedOutlined';
+import { FlexContainer } from "components/styled/FlexContainer";
 import styled from "styled-components";
 import "./index.scss";
-import { useTranslation } from "react-i18next";
+
 
 const AttractionsBlock = () => {
   const { attractionsList, attractionDetails } = useTypedSelector(state => state.places);
@@ -23,11 +24,11 @@ const AttractionsBlock = () => {
     placeDetailsService.getbyXid(activeAttractionId)
       .then(res => setAttractionDetails(res))
       .catch(err => console.log(err.message));
-  }, [activeAttractionId, setAttractionDetails])
+  }, [activeAttractionId, setAttractionDetails]);
 
   useEffect(() => {
     return () => { clearCitiesState() }
-  }, [clearCitiesState])
+  }, [clearCitiesState]);
 
   return (
     <FlexContainer direction="column" align="flex-start" gap="10px" justify="space-between" >

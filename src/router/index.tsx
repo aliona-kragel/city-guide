@@ -1,8 +1,8 @@
-import PlaceDetails from 'pages/PlaceDetails';
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
-import MainLayout from '../layouts/MainLayout';
-import Places from '../pages/Places';
-import Map from '../pages/Map';
+import MainLayout from 'layouts/MainLayout';
+import Places from 'pages/Places';
+import Map from 'pages/Map';
+import PlaceDetails from 'pages/PlaceDetails';
 import Start from 'pages/StartPage';
 
 export const router = createBrowserRouter(createRoutesFromElements(
