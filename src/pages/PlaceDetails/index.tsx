@@ -1,7 +1,7 @@
 import AttractionsBlock from "components/AttractionsBlock";
 import CityDescription from "components/CityDescription";
 import { FlexContainer } from "components/styled/FlexContainer";
-import useCitiesActions from "hooks/useCitiesActions";
+import usePlacesActions from "hooks/usePlacesActions";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import placeDetailsService from "services/getPlaceDetails";
@@ -9,7 +9,7 @@ import "./index.scss";
 
 const PlaceDetails = () => {
   let { osm_id } = useParams();
-  const { setAttractionsList, setLocationDescription } = useCitiesActions();
+  const { setAttractionsList, setLocationDescription } = usePlacesActions();
 
   const getAttractionsList = (res: any) => {
     placeDetailsService.getByLatLongAttractions(res.geometry.coordinates[0], res.geometry.coordinates[1])

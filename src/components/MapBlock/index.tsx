@@ -9,8 +9,7 @@ interface IMapBlock {
 }
 
 const MapBlock: FC<PropsWithChildren<IMapBlock>> = ({ mapRef }) => {
-  const { markerPosition } = useTypedSelector(state => state.map);
-  const { selectedLocation } = useTypedSelector(state => state.map);
+  const { markerPosition, selectedLocation } = useTypedSelector(state => state.map);
 
   return (
     <MapContainer ref={mapRef} center={markerPosition} zoom={5} scrollWheelZoom={false} className="map-block__container" transform3DLimit={13}>

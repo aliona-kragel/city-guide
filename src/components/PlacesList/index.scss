@@ -1,0 +1,24 @@
+@import "../.././styles/variables.scss";
+
+.locations__list{
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 5px; 
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $extra_color;   
+    border-radius: 10px;
+  }
+.location__item{
+  position: relative;
+  width: 100%;
+  background-color: $main_transparent_bgc;
+  border-radius: 20px;
+  box-shadow: $main_box_shadow;
+  padding: 35px 10px 10px 10px;
+}
+}
+
+.location__notification{
+  color: $extra_text_color;
+}
