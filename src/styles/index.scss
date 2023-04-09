@@ -15,8 +15,13 @@ body{
   color: $main_text_color;
 }
 
-.App {
-  padding: 20px;
+.App{
+  background-color:$main_transparent_bgc;
+  background-image: url("../assets/images/map_bg.jpg");
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 a {

@@ -15,6 +15,7 @@
       padding: 8px;
       border: 1px solid $main_color;
       box-shadow: $main_box_shadow;
+      transition: all 0.35s ease-in-out;
       cursor: pointer;
       &:hover{
         background: $main_color;
@@ -43,6 +44,7 @@
   width: 50vw;
   transition: 1s ease-in-out;
   box-shadow: $main_box_shadow;
+  transition: all 0.35s ease-in-out;
   .attraction__details-content{
   height: fit-content;
   font-size: 14px;

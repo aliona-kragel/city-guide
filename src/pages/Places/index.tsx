@@ -5,7 +5,7 @@ import "./index.scss";
 
 const Places = () => {
   return (
-    <FlexContainer className="places__container" direction="column" justify='start'>
+    <FlexContainer className="places__container" direction="column" justify='start' gap="20px">
       <SearchControl />
       <PlacesList />
     </FlexContainer>
