@@ -1,10 +1,10 @@
-import { Breadcrumbs, Typography } from "@mui/material";
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { useTranslation } from "react-i18next";
 import LinkBreadCrumb from "components/base/LinkBreadCrumb";
+import { Breadcrumbs, Typography } from "@mui/material";
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 const BreadCrumbs = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <Breadcrumbs

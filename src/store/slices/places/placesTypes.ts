@@ -1,8 +1,8 @@
 import { LocationTypes } from "types/locationTypes";
 
 export interface IPlaces {
-  locationsList: LocationTypes[] | null,
-  attractionsList: IAttractionsListTypes[] | null,
+  locationsList: LocationTypes[] | [],
+  attractionsList: IAttractionsListTypes[] | [],
   attractionDetails: IAttractionDetailsTypes | null,
   locationDescription: IPlaceDescriptionTypes | null,
   inputValue: string,

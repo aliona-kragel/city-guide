@@ -1,9 +1,9 @@
-import { Canvas } from "@react-three/fiber";
-import Earth from "components/Earth";
-import { FlexContainer } from "components/styled/FlexContainer";
 import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import Earth from "components/Earth";
+import { FlexContainer } from "components/styled/FlexContainer";
 
 const Start = () => {
   const navigate = useNavigate();

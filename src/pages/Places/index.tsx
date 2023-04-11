@@ -1,6 +1,6 @@
 import PlacesList from "components/PlacesList";
 import SearchControl from "components/SearchControl";
-import { FlexContainer } from "../../components/styled/FlexContainer";
+import { FlexContainer } from "components/styled/FlexContainer";
 import "./index.scss";
 
 const Places = () => {

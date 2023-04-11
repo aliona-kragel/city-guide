@@ -1,7 +1,7 @@
+import { useRef } from "react";
 import AutocompleteTextfield from "components/AutocompleteTextfield";
 import MapBlock from "components/MapBlock";
 import { FlexContainer } from "components/styled/FlexContainer";
-import { useRef } from "react";
 import "./index.scss";
 
 const Map = () => {

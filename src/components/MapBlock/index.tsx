@@ -1,6 +1,6 @@
+import { FC, PropsWithChildren } from "react";
 import WeatherInfo from "components/WeatherInfo";
 import { useTypedSelector } from "hooks/useTypedSelector";
-import { FC, PropsWithChildren } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "./index.scss";
 

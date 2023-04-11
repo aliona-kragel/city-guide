@@ -1,8 +1,8 @@
-import { initReactI18next } from "react-i18next";
-import TranslateIcon from '@mui/icons-material/Translate';
-import i18next from "i18next";
-import { translationsEn, translationsRu } from "translations";
 import { ChangeEvent } from "react";
+import i18next from "i18next";
+import { initReactI18next } from "react-i18next";
+import { translationsEn, translationsRu } from "translations";
+import TranslateIcon from '@mui/icons-material/Translate';
 import "./index.scss";
 
 i18next
@@ -17,7 +17,7 @@ i18next
     interpolation: {
       escapeValue: false
     }
-  })
+  });
 
 const LanguageSelect = () => {
   const handleSelect = (event: ChangeEvent<HTMLSelectElement>) => {
