@@ -1,11 +1,17 @@
 @import "../.././styles/variables.scss";
 
 .attractions__block{
-  height: calc(100vh - 210px);
   .attractions__list{
     width: 25vw;
-    height: 100%;
+    height: calc(100vh - 255px);
     overflow: auto;
+    &::-webkit-scrollbar {
+      width: 5px; 
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $extra_color;   
+      border-radius: 10px;
+    }
     .attraction__item{
       display: flex;
       flex-direction: column;
@@ -39,15 +45,22 @@
 }
 
 .attraction__details{
-  height: 100%;
+  width: 100vw;
+  height: calc(100vh - 255px);
   border: 1px solid $main_color;
   max-width: 50vw;
   transition: 1s ease-in-out;
   box-shadow: $main_box_shadow;
   transition: all 0.35s ease-in-out;
   overflow: auto;
+  &::-webkit-scrollbar {
+    width: 5px; 
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $extra_color;   
+    border-radius: 10px;
+  }
   .attraction__details-content{
-    height: fit-content;
     font-size: 14px;
   }
 }

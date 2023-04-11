@@ -28,11 +28,12 @@ const PlaceDetails = () => {
 
   return (
     <FlexContainer
+      className="place-details__container"
       direction="column"
       align="flex-start"
       justify="space-between"
       gap="20px"
-      height="calc(100vh - 40px)"
+      height="100%"
       width="100%">
       <CityDescription />
       <AttractionsBlock />
