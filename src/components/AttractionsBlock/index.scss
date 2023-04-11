@@ -41,12 +41,13 @@
 .attraction__details{
   height: 100%;
   border: 1px solid $main_color;
-  width: 50vw;
+  max-width: 50vw;
   transition: 1s ease-in-out;
   box-shadow: $main_box_shadow;
   transition: all 0.35s ease-in-out;
+  overflow: auto;
   .attraction__details-content{
-  height: fit-content;
-  font-size: 14px;
+    height: fit-content;
+    font-size: 14px;
   }
 }

@@ -41,7 +41,6 @@ const SearchControl = () => {
             }
           }
         }}
-
         onChange={(event) => setInputValue(event.target.value)}
         value={inputValue}
         className='search-control__textfield'

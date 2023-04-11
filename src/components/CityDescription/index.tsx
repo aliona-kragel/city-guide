@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import BreadCrumbs from "components/BreadCrumbs";
-import { Tag } from "components/Tag";
+import { Tag } from "components/styled/Tag";
 import { FlexContainer } from "components/styled/FlexContainer";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
@@ -9,7 +9,6 @@ import PublicOutlinedIcon from '@mui/icons-material/PublicOutlined';
 import OutlinedFlagTwoToneIcon from '@mui/icons-material/OutlinedFlagTwoTone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { useTranslation } from "react-i18next";
-
 
 const PlaceDescription = () => {
   const { locationDescription } = useTypedSelector(state => state.places);
