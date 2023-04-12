@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import Loader from 'components/Loader';
 import "./index.scss"
 
 interface IAutocomplete {
@@ -59,8 +58,7 @@ const AutocompleteTextfield: FC<PropsWithChildren<IAutocomplete>> = ({ mapRef })
       id="autocomplete"
       value={selectedLocation || null}
       options={options}
-      loading={true}
-      loadingText={<Loader />}
+      noOptionsText={"No places"}
       onChange={handleChange}
       onInputChange={handleInputChange}
       filterOptions={(x) => x}
