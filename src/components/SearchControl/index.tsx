@@ -18,6 +18,7 @@ const SearchControl = () => {
   const { t } = useTranslation();
 
   const getLocationsList = () => {
+    if (inputValue === "") return;
     getLocations(inputValue)
       .then((res: any) => {
         setLocationsList(res)

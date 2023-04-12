@@ -65,8 +65,6 @@ const AutocompleteTextfield: FC<PropsWithChildren<IAutocomplete>> = ({ mapRef })
       onInputChange={handleInputChange}
       filterOptions={(x) => x}
       autoComplete
-      includeInputInList
-      filterSelectedOptions
       isOptionEqualToValue={(option, value) => option?.raw?.osm_id === value?.raw?.osm_id}
       renderInput={(params) => (
         <TextField {...params} label={t("labelAutocomplete")} fullWidth />
