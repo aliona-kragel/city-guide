@@ -43,7 +43,7 @@ const AutocompleteTextfield: FC<PropsWithChildren<IAutocomplete>> = ({ mapRef })
           let options: LocationTypes[] = res;
           setOptions((options?.length) ? (options.filter((options) => options?.raw.osm_type === "relation")) : [])
         })
-    }, [inputValue, options?.length])
+    }, [inputValue])
 
   return (
     <Autocomplete<LocationTypes>

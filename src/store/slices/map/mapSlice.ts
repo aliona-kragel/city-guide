@@ -5,7 +5,7 @@ import { IMap } from "./mapTypes";
 
 const initialState: IMap = {
   selectedLocation: null,
-  markerPosition: [53.904541, 27.561523]
+  markerPosition: undefined
 }
 
 const mapSlice = createSlice({
