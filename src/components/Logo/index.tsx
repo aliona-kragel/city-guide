@@ -1,27 +1,14 @@
-import styled from "styled-components";
 import ModeOfTravelIcon from '@mui/icons-material/ModeOfTravel';
+import { NavLink } from "react-router-dom";
+import "./index.scss";
 
 const Logo = () => {
   return (
-    <LogoContainer>
+    <NavLink to="/start" className="logo__container">
       <ModeOfTravelIcon />
       <h3>City-guide</h3>
-    </LogoContainer>
+    </NavLink>
   )
 }
 
 export default Logo;
-
-const LogoContainer = styled.div`
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  width: 100%;
-  padding: 0 20px;
-  color: #B4CD93;
-  background: linear-gradient(99.32deg, #B4CD93 7.91%, #427A5B 88.96%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-`

@@ -15,7 +15,7 @@ const AttractionsBlock = () => {
   const { setAttractionDetails, clearCitiesState } = usePlacesActions();
   const [activeAttractionId, setActiveAttractionId] = useState<string | undefined>();
   const [attractionsListState, setAttractionState] = useState<IAttractionsListTypes[] | []>([]);
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (!(activeAttractionId)) return;
