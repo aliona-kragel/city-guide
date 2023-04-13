@@ -14,7 +14,7 @@ const Start = () => {
           <Earth />
         </Suspense>
       </Canvas>
-      <FlexContainer width="50%" height="100vh" direction="column" align="end">
+      <FlexContainer width="50%" height="100vh" direction="column" align="end" justify="end" padding="0 0 120px 0">
         <Slogan>Discover<br />and enjoy your new <br />places and experiences</Slogan>
         <StartButton onClick={() => navigate(`/map`)}>Get start</StartButton>
       </FlexContainer>
@@ -35,7 +35,7 @@ background: linear-gradient(147deg, rgba(10,13,31,1) 32%, rgba(63,64,69,1) 34%, 
 const Slogan = styled.h3`
 text-align: end;
 color: #808080;
-font-size: 2.5rem;
+font-size: 2rem;
 margin-bottom: 4rem;
 `
 

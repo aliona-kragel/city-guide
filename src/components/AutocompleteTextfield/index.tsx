@@ -58,7 +58,7 @@ const AutocompleteTextfield: FC<PropsWithChildren<IAutocomplete>> = ({ mapRef })
       id="autocomplete"
       value={selectedLocation || null}
       options={options}
-      noOptionsText={"No places"}
+      noOptionsText={t("noLocations")}
       onChange={handleChange}
       onInputChange={handleInputChange}
       filterOptions={(x) => x}
