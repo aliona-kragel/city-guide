@@ -4,11 +4,12 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Earth from "components/Earth";
 import { FlexContainer } from "components/styled/FlexContainer";
+import "./index.scss"
 
 const Start = () => {
   const navigate = useNavigate();
   return (
-    <EarthContainer>
+    <EarthContainer className="earth__component">
       <Canvas >
         <Suspense fallback={null}>
           <Earth />
@@ -48,6 +49,7 @@ transition: all 0.35s ease-in-out;
 font-size: 1.5rem;
 color: white;
 box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+cursor: pointer;
 &:hover{
   background: none;
   color: #B4CD93;
